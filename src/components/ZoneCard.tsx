@@ -40,7 +40,7 @@ export function ZoneCard({ zone, size, onSelect }: ZoneCardProps) {
     <button
       type="button"
       onClick={() => onSelect(zone.id)}
-      className="group relative block min-h-[220px] w-full flex-1 overflow-hidden rounded-[4px] bg-forest text-left"
+      className="group relative block min-h-[170px] w-full flex-1 sm:min-h-[220px] overflow-hidden rounded-[4px] bg-forest text-left"
     >
       <img
         src={imageUrl(coverId)}
@@ -49,11 +49,11 @@ export function ZoneCard({ zone, size, onSelect }: ZoneCardProps) {
         className="absolute inset-0 size-full object-cover transition-transform duration-700 group-hover:scale-105"
       />
       <span className="absolute inset-0 bg-[linear-gradient(0deg,rgba(11,17,14,0.85)_0%,rgba(11,17,14,0)_60%)]" />
-      <span className="absolute bottom-6 left-7 right-7">
-        <span className="block text-xs tracking-[0.28em] text-leaf uppercase">
+      <span className="absolute right-4 bottom-4 left-4 sm:right-7 sm:bottom-6 sm:left-7">
+        <span className="block text-[10px] tracking-[0.24em] text-leaf uppercase sm:text-xs sm:tracking-[0.28em]">
           {zoneNumber(zone.id)} · {floorLabel}
         </span>
-        <span className="mt-1 block font-display text-[2rem] leading-tight transition-colors group-hover:text-wood">
+        <span className="mt-1 block font-display text-xl leading-tight sm:text-[2rem] transition-colors group-hover:text-wood">
           {zone.name}
         </span>
       </span>

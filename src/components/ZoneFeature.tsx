@@ -43,7 +43,7 @@ export function ZoneFeature({ zone, variantImageId, onSelectVariant, onOpenGalle
   }
 
   return (
-    <div className="relative min-h-[420px] overflow-hidden rounded-[4px] bg-forest sm:min-h-[520px] lg:h-full">
+    <div className="relative min-h-[460px] overflow-hidden rounded-[4px] bg-forest sm:min-h-[520px] lg:h-full">
       {showVideo ? (
         <video
           key={zone.videoId}
@@ -65,7 +65,7 @@ export function ZoneFeature({ zone, variantImageId, onSelectVariant, onOpenGalle
       <div className="absolute inset-0 bg-[linear-gradient(0deg,rgba(11,17,14,0.88)_0%,rgba(11,17,14,0)_55%)]" />
 
       {zone.lightVariants && (
-        <div className="absolute top-5 right-5 left-5 flex flex-wrap justify-end gap-2" role="group" aria-label="Color de luces">
+        <div className="absolute top-4 right-4 left-4 flex flex-wrap justify-end gap-2 sm:top-5 sm:right-5 sm:left-5" role="group" aria-label="Color de luces">
           {zone.videoId && variantImageId && (
             <button
               type="button"
@@ -99,12 +99,12 @@ export function ZoneFeature({ zone, variantImageId, onSelectVariant, onOpenGalle
         </div>
       )}
 
-      <div className="absolute right-6 bottom-6 left-6 flex items-end justify-between gap-6 sm:right-10 sm:bottom-10 sm:left-10">
+      <div className="absolute right-5 bottom-5 left-5 flex flex-col items-start gap-4 sm:flex-row sm:items-end sm:justify-between sm:gap-6 sm:right-10 sm:bottom-10 sm:left-10">
         <div>
           <p className="text-xs tracking-[0.28em] text-leaf uppercase">
             {zoneNumber(zone.id)} · {floorLabel}
           </p>
-          <h3 className="mt-2 font-display text-4xl leading-[1.05] sm:text-[3.5rem]">{zone.name}</h3>
+          <h3 className="mt-2 font-display text-[2.5rem] leading-[1.05] sm:text-[3.5rem]">{zone.name}</h3>
           <p className="mt-2 text-base text-mist/80 sm:text-[17px]">{zone.tagline}</p>
         </div>
         <div className="flex shrink-0 gap-3">

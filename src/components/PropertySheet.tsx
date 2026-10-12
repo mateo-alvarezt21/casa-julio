@@ -18,7 +18,7 @@ export function PropertySheet() {
   return (
     <section id="la-casa" className="scroll-mt-20 bg-forest px-4 py-24 sm:px-8 lg:px-[72px]" aria-labelledby="sheet-title">
       <div className="mx-auto max-w-[1296px]">
-        <div className="grid gap-14 lg:grid-cols-2 lg:gap-[72px]">
+        <div className="grid grid-cols-1 gap-14 lg:grid-cols-2 lg:gap-[72px]">
           <div className="flex flex-col gap-6">
             <p className="text-xs font-medium tracking-[0.32em] text-wood uppercase">La hacienda</p>
             <h2 id="sheet-title" className="font-display text-3xl leading-[1.3] sm:text-[2.15rem]">
@@ -31,7 +31,7 @@ export function PropertySheet() {
             <div className="flex flex-wrap items-end justify-between gap-4">
               <div>
                 <p className="text-xs tracking-[0.24em] text-mist/60 uppercase">Precio</p>
-                <p className="mt-1 font-display text-5xl text-wood">{formatPrice(property.price, property.currency)}</p>
+                <p className="mt-1 font-display text-[2.4rem] leading-tight text-wood sm:text-5xl">{formatPrice(property.price, property.currency)}</p>
               </div>
               <a
                 href="#contacto"
@@ -57,7 +57,7 @@ export function PropertySheet() {
           </div>
         </div>
 
-        <div className="mt-20 grid gap-10 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-[72px]">
+        <div className="mt-20 grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-[72px]">
           <div>
             <h3 className="text-xs font-medium tracking-[0.32em] text-wood uppercase">Lo que la hace única</h3>
             <ul className="mt-6 flex flex-col">

@@ -50,11 +50,11 @@ export function ZoneExplorer({ zone, onSelectZone, onInterested }: ZoneExplorerP
 
   return (
     <section id="recorrido" className="scroll-mt-20 px-4 pt-24 pb-24 sm:px-8 lg:px-[72px]" aria-labelledby="explorer-title">
-      <div className="mx-auto flex max-w-[1296px] flex-col gap-10">
+      <div className="mx-auto flex max-w-[1296px] flex-col gap-10 [&>*]:min-w-0">
         <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <p className="text-xs font-medium tracking-[0.32em] text-wood uppercase">Recorrido por zonas</p>
-            <h2 id="explorer-title" className="mt-3 font-display text-5xl leading-none sm:text-7xl">
+            <h2 id="explorer-title" className="mt-3 font-display text-[2.75rem] leading-none sm:text-7xl">
               {zones.length} espacios,
               <br />
               <span className="text-wood italic">un solo bosque.</span>
@@ -81,7 +81,7 @@ export function ZoneExplorer({ zone, onSelectZone, onInterested }: ZoneExplorerP
           </div>
         </div>
 
-        <div ref={featureRef} className="grid scroll-mt-24 gap-6 lg:h-[640px] lg:grid-cols-[minmax(0,1.6fr)_minmax(0,1fr)]">
+        <div ref={featureRef} className="grid scroll-mt-24 grid-cols-1 gap-4 sm:gap-6 lg:h-[640px] lg:grid-cols-[minmax(0,1.6fr)_minmax(0,1fr)]">
           <ZoneFeature
             key={zone.id}
             zone={zone}
@@ -89,15 +89,15 @@ export function ZoneExplorer({ zone, onSelectZone, onInterested }: ZoneExplorerP
             onSelectVariant={(mediaId) => setVariant(mediaId ? { zoneId: zone.id, mediaId } : null)}
             onOpenGallery={(mediaId) => setLightboxIndex(Math.max(0, galleryIds.indexOf(mediaId)))}
           />
-          <div className="grid grid-cols-2 gap-4 lg:flex lg:flex-col lg:gap-6">
+          <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:flex lg:flex-col lg:gap-6">
             {sideZones.map((candidate) => (
               <ZoneCard key={candidate.id} zone={candidate} size="side" onSelect={selectZone} />
             ))}
           </div>
         </div>
 
-        <div className="grid gap-10 lg:grid-cols-[minmax(0,1.6fr)_minmax(0,1fr)] lg:gap-6">
-          <div className="flex flex-col gap-6">
+        <div className="grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,1.6fr)_minmax(0,1fr)] lg:gap-6">
+          <div className="flex min-w-0 flex-col gap-6">
             <p className="max-w-2xl text-lg leading-relaxed text-mist/75">{zone.description}</p>
             <ul className="flex flex-wrap gap-2">
               {zone.highlights.map((highlight) => (

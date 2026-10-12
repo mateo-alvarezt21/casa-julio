@@ -45,7 +45,7 @@ export default function App() {
         <PropertySheet />
 
         <section id="contacto" className="scroll-mt-20 px-4 py-24 sm:px-8 lg:px-[72px]" aria-labelledby="contact-title">
-          <div className="mx-auto grid max-w-[1296px] gap-12 lg:grid-cols-[minmax(0,4fr)_minmax(0,6fr)]">
+          <div className="mx-auto grid max-w-[1296px] grid-cols-1 gap-12 lg:grid-cols-[minmax(0,4fr)_minmax(0,6fr)]">
             <div>
               <p className="text-xs font-medium tracking-[0.32em] text-wood uppercase">Contacto</p>
               <h2 id="contact-title" className="mt-3 font-display text-5xl leading-none sm:text-7xl">
