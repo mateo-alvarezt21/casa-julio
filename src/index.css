@@ -1,0 +1,70 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-display: 'Bodoni Moda', ui-serif, Georgia, serif;
+  --font-sans: 'Hanken Grotesk', ui-sans-serif, system-ui, sans-serif;
+
+  --color-night: #0b110e;
+  --color-forest: #121a16;
+  --color-moss: #1a241f;
+  --color-fern: #2a3a31;
+  --color-leaf: #9fd18b;
+  --color-wood: #c8a05e;
+  --color-wood-deep: #a07c40;
+  --color-mist: #efe9dd;
+  --color-stone: #a9a497;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    @apply bg-night font-sans text-mist antialiased;
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-wood;
+  }
+}
+
+@keyframes hotspot-pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(2.6);
+    opacity: 0;
+  }
+}
+
+.hotspot-ring {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: hotspot-pulse 1.8s ease-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .hotspot-ring {
+    animation: none;
+  }
+}
+
+/* Bodoni Moda's optical-size axis turns hairlines nearly invisible at display sizes;
+   pin a sturdier optical size and weight so headings stay legible over video. */
+.font-display {
+  font-optical-sizing: none;
+  font-variation-settings: 'opsz' 14;
+  font-weight: 500;
+}
+
+.scrollbar-thin {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-fern) transparent;
+}
